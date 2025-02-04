@@ -1,0 +1,12 @@
+
+SELECT ProductID, ProductName, UnitPrice from dbo.products WHERE UnitPrice < 20;
+
+SELECT ProductID, ProductName, UnitPrice from dbo.products WHERE UnitPrice BETWEEN 15 and 25;
+
+SELECT ProductID, ProductName, UnitPrice from dbo.products WHERE UnitPrice > (SELECT AVG(UnitPrice) from dbo.products)
+
+Select Top 10 ProductID, ProductName, UnitPrice from dbo.products ORDER BY UnitPrice DESC;
+
+Select Discontinued , Count(Discontinued) as count from dbo.products Group BY Discontinued;
+
+select ProductName, UnitsInStock, UnitsOnOrder from products where UnitsInStock < UnitsOnOrder;
